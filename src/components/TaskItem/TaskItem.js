@@ -6,7 +6,7 @@ export default function TaskItem({
   id,
   title,
   taskState,
-  onTaskupdate, 
+  onTaskUpdate, 
   onDeleteTask
 }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -15,7 +15,7 @@ export default function TaskItem({
   const ontitleChange = (event) => {
     const newTitle = event.target.value;
     setEditableTitle(newTitle);
-    onTaskupdate(id, newTitle, taskState);
+    onTaskUpdate(id, newTitle, taskState);
   };
 
   const onKeyPress = (event) => {
@@ -27,7 +27,7 @@ export default function TaskItem({
     }
   };
   const onTaskStateChange = (event) => {
-    onTaskupdate(id, title, event.target.value);
+    onTaskUpdate(id, title, event.target.value);
   };
 
   if (isEditing) {

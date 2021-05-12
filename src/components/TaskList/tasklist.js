@@ -1,7 +1,7 @@
 import React from "react";
 import "./tasklist.css";
 import PropTypes from "prop-types";
-//import plusIcon from "../../img/plus-icon.svg";
+import plusIcon from "../../img/plus-icon.svg";
 import TaskItem from "../TaskItem/TaskItem.js";
 
 export default function TaskList({
@@ -9,7 +9,7 @@ export default function TaskList({
   taskState,
   onAddTask,
   tasks,
-  onTaskupdate,
+  onTaskUpdate,
   onDeleteTask
 }) {
   const addTask = () => {
@@ -26,15 +26,15 @@ export default function TaskList({
               id={task.id}
               title={task.title}
               taskState={task.state}
-              onTaskupdate={onTaskupdate}
+              onTaskUpdate={onTaskUpdate}
               onDeleteTask={onDeleteTask}
             />
           );
           
         })}
-        {tasks.length=== 0 &&<div className="empty-list">Lista Vazia</div>}
+        {tasks.length === 0 &&<div className="empty-list">Lista Vazia</div>}
          <button onClick={addTask} className="btn">
-        {/* <img src={plusIcon} alt="plus"/> */}
+        {<img src={plusIcon} alt="plus"/>}
         Adicionar Tarefa
       </button>
        
